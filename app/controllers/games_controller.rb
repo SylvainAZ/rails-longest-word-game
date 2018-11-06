@@ -9,10 +9,11 @@ class GamesController < ApplicationController
 
   def score
     @message = ""
+    letters = params[:sample]
     user_input = params[:word].split("")
     user_input.each do |letter|
-      if @sample.include? letter
-        sample.delete(letter)
+      if letters.include? letter
+        letters.delete(letter)
       else
         @message = "sorry but #{params[:word]} is not included in #{@sample}  "
       end
